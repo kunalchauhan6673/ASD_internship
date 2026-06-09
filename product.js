@@ -16,3 +16,60 @@ for(let i = 0; i < products.length; i++){
     }
 }
 
+// 2. Search Product by Price
+console.log("\n2. Search Product by Price");
+let searchPrice = 35000;
+
+for(let i = 0; i < products.length; i++){
+    if(products[i].price === searchPrice){
+        console.log(products[i]);
+    }
+}
+
+// 3. Products Above ₹5000
+console.log("\n3. Products Above ₹5000");
+
+for(let i = 0; i < products.length; i++){
+    if(products[i].price > 5000){
+        console.log(products[i]);
+    }
+}
+
+// 4. Products Below ₹5000
+console.log("\n4. Products Below ₹5000");
+
+for(let i = 0; i < products.length; i++){
+    if(products[i].price < 5000){
+        console.log(products[i]);
+    }
+}
+
+// 5. Count Total Products
+console.log("\n5. Total Products");
+console.log(products.length);
+
+// 6. Most Expensive Product
+console.log("\n6. Most Expensive Product");
+
+let max = products[0];
+
+for(let i = 1; i < products.length; i++){
+    if(products[i].price > max.price){
+        max = products[i];
+    }
+}
+
+console.log(max);
+
+// 7. Cheapest Product
+console.log("\n7. Cheapest Product");
+
+let min = products[0];
+
+for(let i = 1; i < products.length; i++){
+    if(products[i].price < min.price){
+        min = products[i];
+    }
+}
+
+console.log(min);
