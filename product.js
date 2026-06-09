@@ -147,3 +147,89 @@ if(found){
 else{
     console.log("Product Not Found");
 }
+// 14. Good Quality and Low Quality Categories
+console.log("\n14. Product Categories");
+
+console.log("Good Quality Products:");
+
+for(let i = 0; i < products.length; i++){
+    if(products[i].quality === "Good"){
+        console.log(products[i]);
+    }
+}
+
+console.log("\nLow Quality Products:");
+
+for(let i = 0; i < products.length; i++){
+    if(products[i].quality === "Low"){
+        console.log(products[i]);
+    }
+}
+
+// 15. Products Between ₹5000 and ₹50000
+console.log("\n15. Products Between ₹5000 and ₹50000");
+
+for(let i = 0; i < products.length; i++){
+    if(products[i].price >= 5000 && products[i].price <= 50000){
+        console.log(products[i]);
+    }
+}
+
+// 16. Sort Price Ascending
+console.log("\n16. Sort Price Ascending");
+
+products.sort(function(a, b){
+    return a.price - b.price;
+});
+
+console.log(products);
+
+// 17. Sort Price Descending
+console.log("\n17. Sort Price Descending");
+
+products.sort(function(a, b){
+    return b.price - a.price;
+});
+
+console.log(products);
+
+// 18. Display Products with 18% GST
+console.log("\n18. Products with 18% GST");
+
+for(let i = 0; i < products.length; i++){
+
+    let gstPrice =
+        products[i].price +
+        (products[i].price * 18 / 100);
+
+    console.log(
+        products[i].name,
+        "Original Price =", products[i].price,
+        "GST Price =", gstPrice
+    );
+}
+
+// 19. Calculate Total Inventory Value
+console.log("\n19. Total Inventory Value");
+
+let totalValue = 0;
+
+for(let i = 0; i < products.length; i++){
+    totalValue = totalValue + products[i].price;
+}
+
+console.log(totalValue);
+
+// 20. Product Report
+console.log("\n20. Product Report");
+console.log("Name\t\tPrice\t\tQuality");
+
+for(let i = 0; i < products.length; i++){
+    console.log(
+        products[i].name,
+        "\t",
+        products[i].price,
+        "\t",
+        products[i].quality
+    );
+}
