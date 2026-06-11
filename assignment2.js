@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
 
-app.use(express.json()); // To read JSON data
+app.use(express.json()); 
 
-// Dummy Student Data
 let students = [
     { id: 1, name: "Kunal", course: "BCA", city: "Dehradun", fees: 45000 },
     { id: 2, name: "Aman", course: "MCA", city: "Delhi", fees: 60000 },
@@ -12,23 +11,22 @@ let students = [
     { id: 5, name: "Rohit", course: "MCA", city: "Lucknow", fees: 50000 }
 ];
 
-/* =====================================================
-   1. Welcome Message
-===================================================== */
+
+// 1. Welcome Message
+
 app.get("/", (req, res) => {
     res.send("Welcome to Express.js Student Management System");
 });
 
-/* =====================================================
-   2. Fetch All Students
-===================================================== */
+
+//  2. Fetch All Students
+
 app.get("/students", (req, res) => {
     res.json(students);
 });
 
-/* =====================================================
-   3. Fetch Student By ID
-===================================================== */
+// 3. Fetch Student By ID
+
 app.get("/students/:id", (req, res) => {
     let id = parseInt(req.params.id);
 
@@ -41,18 +39,18 @@ app.get("/students/:id", (req, res) => {
     res.send("Student not found");
 });
 
-/* =====================================================
-   4. Add New Student
-===================================================== */
+
+// 4. Add New Student
+
 app.post("/students", (req, res) => {
     students.push(req.body);
 
     res.send("Student Added Successfully");
 });
 
-/* =====================================================
-   5. Delete Student By ID
-===================================================== */
+
+// 5. Delete Student By ID
+
 app.delete("/students/:id", (req, res) => {
     let id = parseInt(req.params.id);
 
